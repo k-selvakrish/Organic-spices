@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SPICES</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">SPICES</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#product">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+      <button class="btn btn-warning">Sign In</button>
+    </div>
+  </div>
+</nav>
+
+<section id="home" class="py-5 text-center">
+  <h1>ORGANIC SPICES</h1>
+  <p>Variety's the very spice of life, that gives it all its flavor</p>
+  <div class="input-group justify-content-center mt-4">
+    <input type="text" class="form-control w-25" placeholder="Email Address">
+    <button class="btn btn-warning">Get Started</button>
+  </div>
+</section>
+
+<section id="about" class="py-5">
+  <div class="container-fluid">
+    <div class="row align-items-stretch">
+      <div class="col-lg-6 text-center">
+        <img src="{{ url_for('static', filename='img/organic.jpg') }}" class="img-fluid" alt="Organic Spices">
+      </div>
+      <div class="col-lg-6 p-3 d-flex flex-column justify-content-center">
+        <h1>About Us</h1>
+        <p>Welcome to <b>Spices World</b> – pure, natural, organic spices...</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="product" class="py-5">
+  <div class="container">
+    <h1 class="text-center my-5">Our Products</h1>
+    <div class="row justify-content-center">
+      {% for product in products %}
+      <div class="col-lg-4 col-md-6 col-12 mb-4">
+        <div class="card">
+          <img src="{{ url_for('static', filename='img/' + product.image) }}" class="card-img-top" alt="{{ product.name }}">
+          <div class="card-body text-center">
+            <h5 class="card-title">{{ product.name }} — ${{ product.price }}</h5>
+            <a href="{{ url_for('add_to_cart', product_id=product.id) }}" class="btn btn-warning">Add To Cart</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 mb-4">
+        <img src="{{ url_for('static', filename='img/contact.jpg') }}" class="img-fluid">
+      </div>
+      <div class="col-lg-6">
+        <h1>Contact Us</h1>
+        <form>
+          <input type="text" class="form-control mb-2" placeholder="Name">
+          <input type="email" class="form-control mb-2" placeholder="Email">
+          <textarea class="form-control mb-2" placeholder="Message"></textarea>
+          <button class="btn btn-warning">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="text-center py-3 bg-dark text-white">© 2025 Spices World | All Rights Reserved</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

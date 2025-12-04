@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ================= NAVBAR ================= */
+#navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0.7rem 2rem;
+  background: #000;
+  box-shadow: 0 2px 12px rgba(0,0,0,.4);
+}
+
+.navbar-brand {
+  font-size: 28px;
+  font-weight: 800;
+  color: #29f700 !important;
+}
+
+#navbarSupportedContent a {
+  color: #fff;
+  font-size: 16px;
+  margin: 0 10px;
+}
+
+#navbarSupportedContent a:hover {
+  border-bottom: 2px solid #29f700;
+}
+
+/* Navbar Button */
+#navbar .btn {
+  background: #29f700 !important;
+  color: black !important;
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+/* ================= SECTIONS ================= */
+section {
+  width: 100%;
+  padding: 70px 0;
+}
+
+/* ================= HOME ================= */
+#home {
+  background: url("../img/p2.jpg") center/cover no-repeat;
+  text-align: center;
+  padding-top: 140px;
+  padding-bottom: 160px;
+}
+
+#home h1 {
+  font-size: 65px;
+  color: white;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.6);
+}
+
+#home p {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+/* Home Input Small Size */
+.custom-input {
+  width: 220px;
+  height: 40px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Input + Button alignment */
+.input-group {
+  width: 100%;
+  justify-content: center !important;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+/* Small "Get Started" Button */
+.signin {
+  background: #29f700 !important;
+  color: black !important;
+  font-weight: 600;
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+/* ================= ABOUT ================= */
+#about {
+  background: #000;
+  color: white;
+}
+
+#about h1 {
+  font-size: 45px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+#about p {
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.about-img {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  border-radius: 10px;
+  margin: 20px auto;
+}
+
+/* ================= PRODUCT ================= */
+#product {
+  background: #f5f5f5;
+  padding-bottom: 80px;
+}
+
+#product h1 {
+  font-size: 50px;
+  font-weight: 800;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* FIXED: Correct row selector */
+#product .row {
+  justify-content: center !important;
+}
+
+.card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: 0.3s;
+  background: white;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card-img-top {
+  height: 220px;
+  object-fit: cover;
+}
+
+/* ================= CONTACT ================= */
+#contact img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.box {
+  width: 80%;
+  margin: 0 auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+#contact input,
+#contact textarea {
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+#contact textarea {
+  height: 120px;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  background: #000;
+  color: white;
+  text-align: center;
+  padding: 12px 0;
+  font-size: 15px;
+}
